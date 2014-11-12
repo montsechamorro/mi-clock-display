@@ -8,7 +8,7 @@
 public class NumberDisplay
 {
     // instance variables - replace the example below with your own
-    private int límite;
+    private int limite;
     private int valorActual;
 
     /**
@@ -16,7 +16,7 @@ public class NumberDisplay
      */
     public NumberDisplay(int limit)
     {
-        límite = limit;
+        limite = limit;
         valorActual = 0;
 
     }
@@ -53,6 +53,16 @@ public class NumberDisplay
     public int getValue()
     {
         return valorActual;
+    }
+
+    /**
+     * metodo que incrementa en 1 al display y lo hace volver al principio si alcanza el límite
+     */
+    public void increment()
+    {
+        valorActual = valorActual + 1;
+        
+
     }
 
           

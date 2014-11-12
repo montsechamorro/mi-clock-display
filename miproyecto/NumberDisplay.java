@@ -20,6 +20,7 @@ public class NumberDisplay
         valorActual = 0;
 
     }
+
     /**
      * metodo que fija el valor actual del display
      */
@@ -27,13 +28,14 @@ public class NumberDisplay
     {
         valorActual = newValorActual;
     }
+
     /**
      * metodo que devuelve el valor actual en forma de cadena de 2 caracteres
      */
     public String getDisplayValue()
     {
-        
-       int valorAc = valorActual;
+
+        int valorAc = valorActual;
         if (valorAc<10)
         {
             return "0" + valorAc;
@@ -42,24 +44,16 @@ public class NumberDisplay
         {
             return "" + valorAc;
         }
-   
+
     }
-/**
- * metodo que devuelve el valor actual del display como entero
- */
-public int getValue()
-{
-    return valorActual;
-}
-/**
- * metodo que incrementa en 1 al display y lo hace volver al principio si alcanza el límite
- */
-public void increment()
-{
-   
-}
-        
-      
+
+    /**
+     * metodo que devuelve el valor actual del display como entero
+     */
+    public int getValue()
+    {
+        return valorActual;
+    }
+
           
-    
 }

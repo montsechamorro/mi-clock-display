@@ -14,9 +14,10 @@ public class NumberDisplay
     /**
      * Constructor for objects of class NumberDisplay
      */
-    public NumberDisplay()
+    public NumberDisplay(int valorMaximo)
     {
-        // initialise instance variables
+        límite = valorMaximo;
+        valorActual = 0;
 
     }
 

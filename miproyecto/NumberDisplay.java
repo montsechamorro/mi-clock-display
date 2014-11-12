@@ -61,6 +61,10 @@ public class NumberDisplay
     public void increment()
     {
         valorActual = valorActual + 1;
+        if (valorActual == limite)
+        {
+            valorActual = 0;
+        }
         
 
     }

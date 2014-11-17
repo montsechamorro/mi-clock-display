@@ -7,8 +7,9 @@
  */
 public class NumberDisplay
 {
-    // instance variables - replace the example below with your own
+    // El limite al que puede llegar el valor
     private int limite;
+    //El valor almacenado
     private int valorActual;
 
     /**
@@ -26,7 +27,9 @@ public class NumberDisplay
      */
     public void setValue(int newValorActual)
     {
-        valorActual = newValorActual;
+        if ((newValorActual < limite) && (newValorActual >= 0)){
+            valorActual = newValorActual;
+        }
     }
 
     /**

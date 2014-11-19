@@ -38,15 +38,16 @@ public class NumberDisplay
     public String getDisplayValue()
     {
 
-        int valorAc = valorActual;
-        if (valorAc<10)
+        String returnedValue = "";
+        if (valorActual < 10)
         {
-            return "0" + valorAc;
+            returnedValue =  "0" + valorActual;
         }
         else
         {
-            return "" + valorAc;
+            returnedValue = "" + valorActual;
         }
+        return returnedValue;
 
     }
 

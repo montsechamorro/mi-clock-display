@@ -22,7 +22,7 @@ public class ClockDisplay
     {
         horas = new NumberDisplay(24);
         minutos = new NumberDisplay(60);
-        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
+        updateDisplay();
     }
 
     /**
@@ -36,7 +36,7 @@ public class ClockDisplay
         horas.setValue(newHoras);
         minutos.setValue(newMinutos);
 
-        horaActual = horas.getDisplayValue() + ":" +minutos.getDisplayValue();
+        updateDisplay();
 
     }
 
@@ -47,17 +47,17 @@ public class ClockDisplay
     {
         horas.setValue(actualHoras);
         minutos.setValue(actualMinutos);
-        horaActual = horas.getDisplayValue() + ":" +minutos.getDisplayValue();
+        updateDisplay();
     }
 
     /**
      * Devuelve una cadena de 5 caracteres con la hora y los minutos separados por dos puntos
      * la primera linea de este metodo no haria falta ponerlo pq siempre q cambio los valores de numberDisplay 
-     * se actualiza este otro valor automaticamente pq esta definido asi. la kitariamos
+     * se actualiza este otro valor automaticamente pq esta definido asi. la kitariamos(es la linea del ultimo metodo)(ya la kite de aqui)
      */
     public String getTime()
     {
-        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
+
         return horaActual;
     }
 
@@ -65,10 +65,32 @@ public class ClockDisplay
     {
         minutos.increment();
         if (minutos.getValue() == 0) {
+
             horas.increment();
         }
-        
-        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
+
+        updateDisplay();
     }
 
-}
+    /**
+     * metodo creado para sustituir el contenido por este metodo en el resto del código
+     */
+    private void updateDisplay()
+    {
+        if (horas.getValue() < 12) {
+            horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue() + " am";
+        }
+        else
+        {
+            int horarioPm = (horas.getValue() - 12);
+
+            if (horarioPm < 10) {
+                horaActual ="0" + horarioPm + ":" + minutos.getDisplayValue() + " pm";
+            }
+            else {
+                horaActual =horarioPm + ":" + minutos.getDisplayValue() + " pm";
+            }
+        }
+    }
+
+    }
